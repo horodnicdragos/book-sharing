@@ -20,5 +20,15 @@ Template.bookSubmit.events({
       }
     }
   );
-  }
+
+  Books.insert({
+    'isbn': isbn,
+    'name': name,
+    'author': author,
+    'description': description,
+    'owner': Meteor.user()._id,
+    'currentUser': '',
+    'daysLeft': ''
+  });
+}
 });
