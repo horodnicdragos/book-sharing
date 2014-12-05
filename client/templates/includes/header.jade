@@ -1,4 +1,7 @@
+head
+  link(href='http://fonts.googleapis.com/css?family=Roboto:400,300,100', rel='stylesheet', type='text/css')
 template(name='header')
+
   nav.navbar.navbar-default(role='navigation')
     .container-fluid
       .navbar-header
@@ -7,7 +10,11 @@ template(name='header')
           span.icon-bar
           span.icon-bar
           span.icon-bar
-        a.navbar-brand(href='#') book-share
+        a.navbar-brand(href='#')
+          span.logo-text Book 
+          .inline-block
+            img(src='/assets/logo.png').inline-block.logo
+          span.logo-text 'clock
       .collapse.navbar-collapse#navigation
         ul.nav.navbar-nav.navbar-right
           +loginButtons
