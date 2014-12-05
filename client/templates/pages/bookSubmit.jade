@@ -1,0 +1,22 @@
+template(name='bookSubmit')
+  .container
+    .text-center
+      .content
+        p Name
+        p
+          input#bookName(type='text', placeholder='Add Book Name ...')
+      .content
+        p ISBN
+        p
+          input#bookIsbn(type='text', placeholder='Add Book ISBN ...')
+      .content
+        p Author
+        p
+          input#bookAuthor(type='text', placeholder='Add Book Author ...')
+      .content
+        p Description
+        p
+          textarea#bookDescription(style='resize:none', name='desc', cols='40', rows='5', placeholder='Add Book Description ...')
+      .content
+        button.btn.btn-default#submitBook
+          span Add Book

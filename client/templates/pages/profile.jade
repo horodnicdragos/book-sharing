@@ -14,7 +14,10 @@ template(name='profile')
           p #{booksRead} books read.
         .profile.rank
           small Current rank
-          h3 #{currentRank} sd
+          h3 #{currentRank} 
+        .profile.submit
+          a(href='/submit')
+            button.btn.btn-default Submit book
       .col-sm-9
         each borrowedBooks
           .book
