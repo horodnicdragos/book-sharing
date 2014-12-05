@@ -1,0 +1,29 @@
+template(name='profile')
+  .container
+    .row
+      .col-sm-3
+        .profile.picture
+          img(src='http://placekitten.com/g/200/200')
+        .profile.username
+          h2 #{username}
+        .profile.read-books
+          p #{booksRead} books read.
+        .profile.rank
+          small Current rank
+          h3 #{currentRank} sd
+      .col-sm-9
+        .row
+          .col-sm-6
+            span book cover
+        
+    .user-info
+      .panel.panel-default
+        .panel-heading
+          h3.panel-title Basic information
+        .panel-body
+          p Name
+            input#name(type='text', placeholder='Edit Name ...')
+          p Email
+            input#email(type='email', placeholder='Edit Email ...')
+            button#ok-button.btn.btn-default(type='button') Save
+          

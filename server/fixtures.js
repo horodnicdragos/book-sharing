@@ -27,7 +27,7 @@ if (Books.find().count() === 0) {
     year: '1949',
     isbn: '1234567891011',
     category: [
-    'fiction'
+      'fiction'
     ],
     rating: 3.0,
     thumbnail: 'http://placekitten.com/g/128/205',
@@ -49,7 +49,7 @@ if (Books.find().count() === 0) {
     year: '2012',
     isbn: '1234567891011',
     category: [
-    'fiction'
+      'fiction'
     ],
     rating: 4.0,
     thumbnail: 'http://placekitten.com/g/128/205',
