@@ -30,10 +30,10 @@ template(name='bookSubmit')
       //- if (true) alert(1);
       //- document.getElementById('available').innerText() = (available === 'true' ? 'Available' : 'Unavailable');
       for (var j = 0; j< rating; j++) {
-        $( ".rating" ).html( "<span class='full-star'>★</span>" );
+        $( ".rating" ).append( "<span class='full-star'>★</span>" );
         }
         for (var j = 0; j< 5-rating; j++) {
-          $( ".rating" ).html( "<span>★</span>" );
+          $( ".rating" ).append( "<span>★</span>" );
           }
           });
           });
