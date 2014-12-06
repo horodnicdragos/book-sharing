@@ -54,7 +54,7 @@ Template.profile.helpers({
   // },
 
   booksRead: function () {
-    return Meteor.user().booksRead.find({}).count();
+    return '5';
   }
 });
 
@@ -64,6 +64,7 @@ Template.profile.events({
     var name = $('input#name').val().length > 0 ? $('input#name').val() : Meteor.user().profile.name;
     var city = $('input#city').val().length > 0 ? $('input#city').val() : Meteor.user().profile.city;
     var country = $('input#country').val().length > 0 ? $('input#country').val() : Meteor.user().profile.country;
+    var mail = $('input#email').val().length > 0 ? $('input#email').val() : Meteor.user().emails[0].address;
 
     Meteor.users.update({
       _id: Meteor.user()._id
@@ -73,7 +74,9 @@ Template.profile.events({
         'profile': {
           'name': name,
           'city': city,
-          'country': country
+          'country': country,
+          'mail': mail,
+          'readPoints': 10
         }
       }
     }
@@ -81,5 +84,19 @@ Template.profile.events({
   $('input#name').val('');
   $('input#city').val('');
   $('input#country').val('');
+  $('input#email').val('');
+},
+  'click #doneReading': function () {
+    Meteor.users.update({
+      _id: Meteor.user()._id
+    },
+    {
+      $inc:{
+        'profile': {
+          'readPoints': 10
+        }
+      }
+    }
+  );
   }
 });
