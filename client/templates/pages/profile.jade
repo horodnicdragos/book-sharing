@@ -40,38 +40,39 @@ template(name='profile')
             img(src="#{bookImage}")
             span #{bookAuthor}
             span.text - #{daysLeft} days
-    if currentUser
-      h1 Settings
-      hr
-      .user-info
-        .mail
-          span #{username.mail}
-        .panel.panel-default
-          .panel-heading
-            h3.panel-title Basic information
-          .panel-body
-            .row
-              .col-sm-offset-3.col-xs-3
-                p Name
-              .col-xs-9.col-sm-6
-                p
-                  input#name(type='text', placeholder='Edit Name ...')
-            .row
-              .col-sm-offset-3.col-xs-3
-                p Email
-              .col-xs-9.col-sm-6
-                p
-                  input#email(type='email', placeholder='Edit Email ...')
-            .row
-              .col-sm-offset-3.col-xs-3
-                p City
-              .col-xs-9.col-sm-6
-                p
-                  input#city(type='text', placeholder='Edit City ...')
-            .row
-              .col-sm-offset-3.col-xs-3
-                p Country
-              .col-xs-9.col-sm-6
-                p
-                  input#country(type='text', placeholder='Edit Country ...')
-            button#ok-button.btn.btn-default.pull-right(type='button') Save
+    .hidden
+      if currentUser
+        h1 Settings
+        hr
+        .user-info
+          .mail.hidden
+            span #{username.mail}
+          .panel.panel-default
+            .panel-heading
+              h3.panel-title Basic information
+            .panel-body
+              .row
+                .col-sm-offset-3.col-xs-3
+                  p Name
+                .col-xs-9.col-sm-6
+                  p
+                    input#name(type='text', placeholder='Edit Name ...')
+              .row
+                .col-sm-offset-3.col-xs-3
+                  p Email
+                .col-xs-9.col-sm-6
+                  p
+                    input#email(type='email', placeholder='Edit Email ...')
+              .row
+                .col-sm-offset-3.col-xs-3
+                  p City
+                .col-xs-9.col-sm-6
+                  p
+                    input#city(type='text', placeholder='Edit City ...')
+              .row
+                .col-sm-offset-3.col-xs-3
+                  p Country
+                .col-xs-9.col-sm-6
+                  p
+                    input#country(type='text', placeholder='Edit Country ...')
+              button#ok-button.btn.btn-default.pull-right(type='button') Save
