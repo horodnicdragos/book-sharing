@@ -42,8 +42,8 @@ template(name='profile')
             img(src="#{bookImage}")
             span #{bookAuthor}
             span.text - #{daysLeft} days
-          .pull-right
-            button.btn.btn-info#doneReading Done
+            .pull-right
+              button.btn.btn-warning#doneReading Done
     if currentUser
       h1 Settings
       hr

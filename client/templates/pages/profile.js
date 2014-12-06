@@ -87,16 +87,12 @@ Template.profile.events({
   $('input#email').val('');
 },
   'click #doneReading': function () {
-    Meteor.users.update({
-      _id: Meteor.user()._id
-    },
-    {
-      $inc:{
-        'profile': {
-          'readPoints': 10
-        }
-      }
-    }
-  );
+
+    var c = $('.progress-bar').css('width');
+    c = parseInt(c, 10);
+    c = c + ((c * 10)/100);
+    var d = $('.progress-bar').css('width', c);
+    $('.progress-bar').css('width', c);
+    console.log(c);
   }
 });
