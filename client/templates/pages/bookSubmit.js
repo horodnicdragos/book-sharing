@@ -4,7 +4,8 @@ Template.bookSubmit.events({
     var isbn = $('#searchBook').val();
     var author = $('.author').text();
     var description = $('.description').text();
-    var rating = $('.rating').text();
+    var rating = $('.rating').html();
+    var image = $('.cover img').attr('src');
 
     Meteor.users.update({
       _id: Meteor.user()._id
@@ -17,17 +18,20 @@ Template.bookSubmit.events({
             'bookIsbn': isbn,
             'bookAuthor': author,
             'bookDesc': description,
-            'bookrating': rating
+            'bookrating': rating,
+            'bookImage': image
           }
       }
     }
   );
 
   Books.insert({
-    'isbn': isbn,
-    'name': name,
-    'author': author,
-    'description': description,
+    'bookName': name,
+    'bookIsbn': isbn,
+    'bookAuthor': author,
+    'bookDesc': description,
+    'bookrating': rating,
+    'bookImage': image,
     'owner': Meteor.user()._id,
     'currentUser': '',
     'daysLeft': ''

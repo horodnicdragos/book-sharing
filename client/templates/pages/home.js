@@ -5,7 +5,11 @@ Template.home.events({
     });
     console.log(a);
     $('.bookResult').html();
+  },
 
+  'click .borrow': function () {
+    Books.update ({'_id':this._id}, {$set: {'currentUser': Meteor.user()._id }});
+    Meteor.users.update ({'_id': Meteor.user()._id}, {$addToSet: {'borrowedBooks': this._id}});
   }
 });
 

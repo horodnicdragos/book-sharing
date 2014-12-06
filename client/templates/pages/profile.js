@@ -1,4 +1,15 @@
 Template.profile.helpers({
+  borrowedBooks: function () {
+
+    var c = Books.find({currentUser: Meteor.user()._id});
+    var d = [];
+
+    c.forEach( function(elem) {
+      d.push(elem);
+    });
+    console.log(d);
+    return d;
+  },
   username: function () {
     if (Meteor.user()) {
       var name = Meteor.user().profile.name || Meteor.user().emails[0].address;
@@ -18,22 +29,29 @@ Template.profile.helpers({
 
   },
 
-  borrowedBooks: function () {
-    return [
-      {
-        'thumbnail': 'http://placekitten.com/g/200/300/',
-        'daysLeft': '4'
-      },
-      {
-        'thumbnail': 'http://placekitten.com/g/200/300/',
-        'daysLeft': '28'
-      },
-      {
-        'thumbnail': 'http://placekitten.com/g/200/300/',
-        'daysLeft': '11'
-      }
-    ];
-  },
+  // borrowedBooks: function () {
+  //
+  //   var books = [];
+  //   var borrowedBooks = Meteor.user().borrowedBooks[0];
+  //
+  //   console.log('caca', borrowedBooks);
+  //
+  //   //
+  //   // return [
+  //   //   {
+  //   //     'thumbnail': 'http://placekitten.com/g/200/300/',
+  //   //     'daysLeft': '4'
+  //   //   },
+  //   //   {
+  //   //     'thumbnail': 'http://placekitten.com/g/200/300/',
+  //   //     'daysLeft': '28'
+  //   //   },
+  //   //   {
+  //   //     'thumbnail': 'http://placekitten.com/g/200/300/',
+  //   //     'daysLeft': '11'
+  //   //   }
+  //   // ];
+  // },
 
   booksRead: function () {
     return Meteor.user().booksRead.find({}).count();

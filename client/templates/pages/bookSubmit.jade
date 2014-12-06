@@ -9,7 +9,7 @@ template(name='bookSubmit')
     $.getJSON(googleAPI, function (response) {
     
     // In console, you can see the response objects
-    //- console.log("JSON Data: " + response.items);
+    console.log("JSON Data: " + response.items);
     
     // Loop through all the items one-by-one
     for (var i = 0; i < response.items.length; i++) {
@@ -23,17 +23,17 @@ template(name='bookSubmit')
       var description = response.items[0].volumeInfo.description;
       // Set the book title in the div
       }
-      $( ".cover" ).append( "<img src="+cover+">");  
-      $( ".author" ).append( author );  
-      $( ".description" ).append( description );  
-      $( ".title" ).append( title );              
+      $( ".cover" ).html( "<img src="+cover+">");  
+      $( ".author" ).html( author );  
+      $( ".description" ).html( description );  
+      $( ".title" ).html( title );
       //- if (true) alert(1);
       //- document.getElementById('available').innerText() = (available === 'true' ? 'Available' : 'Unavailable');
       for (var j = 0; j< rating; j++) {
-        $( ".rating" ).append( "<span class='full-star'>★</span>" );
+        $( ".rating" ).html( "<span class='full-star'>★</span>" );
         }
         for (var j = 0; j< 5-rating; j++) {
-          $( ".rating" ).append( "<span>★</span>" );
+          $( ".rating" ).html( "<span>★</span>" );
           }
           });
           });
