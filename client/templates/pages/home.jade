@@ -2,3 +2,13 @@ template(name='home')
   .container.row
     .col-xs-12
       img(src='/assets/logo.png').big-logo.center-block
+  
+  if currentUser
+    .container
+      input#searchBook(type='text', placeholder='Search by title')
+      button.btn.btn-default#searchBookBtn Search
+      .bookResult
+        each books
+          .bookDetails
+            p #{name}
+            p #{owner}

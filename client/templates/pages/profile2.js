@@ -1,4 +1,4 @@
-Template.profile.helpers({
+Template.profile2.helpers({
   username: function () {
     if (Meteor.user()) {
       var name = Meteor.user().profile.name || Meteor.user().emails[0].address;
