@@ -1,12 +1,14 @@
 template(name='profile')
   script.
     $(document).ready( function(){
-    var mail = $('.mail').text();
-    var url = Gravatar.imageUrl('horodnicdragos@yahoo.com', {
+    setTimeout(function(){ 
+        var mail = $('.mail').text();
+    var url = Gravatar.imageUrl(mail, {
     size: 300,
     default: 'mm'
     });
-    $('.picture').append('<img src="'+ url +'" class="circular">');
+    $('.picture').html('<img src="'+ url +'" class="circular">'); }, 1000);
+
     });
   .container
     .row
@@ -42,7 +44,7 @@ template(name='profile')
       h1 Settings
       hr
       .user-info
-        .mail.hidden
+        .mail
           span #{username.mail}
         .panel.panel-default
           .panel-heading
