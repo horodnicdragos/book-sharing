@@ -17,6 +17,9 @@ template(name='header')
           span.logo-text 'clock
       .collapse.navbar-collapse#navigation
         ul.nav.navbar-nav.navbar-right
-          li
-            a(href='/profile') Profile
+          if currentUser
+            li
+              a(href='/settings') Settings
+            li
+              a(href='/profile') Profile
           +loginButtons

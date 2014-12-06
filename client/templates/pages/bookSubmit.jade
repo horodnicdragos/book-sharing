@@ -2,7 +2,7 @@ template(name='bookSubmit')
   script.
     $( document ).ready( function(){
       $('#searchBookBtn').on('click', function () {
-      
+    $('.hidden').removeClass("hidden");
     isbn = $('#searchBook').val();
     //- available = $('.avail').text();
     var googleAPI = "https://www.googleapis.com/books/v1/volumes?q=isbn:"+isbn ;
@@ -42,21 +42,25 @@ template(name='bookSubmit')
   .container
     .text-center
       .content
-        input#searchBook(type='text', placeholder='Search by title')
-        button.btn.btn-default#searchBookBtn Search
-        .container.row.book-item
-          .col-xs-3
-            .cover
+        .row
           .col-xs-9
-            .row
-              .col-xs-12
-                h2 
-                  span.title
-                  .right#available 
-                h4 by 
-                span.author
-                .rating
-                .description
+            input.form-control#searchBook(type='text', placeholder='Search by ISBN')
+          .col-xs-3
+            button.btn.btn-default#searchBookBtn Search
+        .container.hidden
+          .row.book-item
+            .col-xs-3
+              .cover
+            .col-xs-9
+              .row
+                .col-xs-12
+                  h2 
+                    span.title
+                    .right#available 
+                  h4 by 
+                  span.author
+                  .rating
+                  .description
           
         
       .content
