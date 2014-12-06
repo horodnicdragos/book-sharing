@@ -93,6 +93,9 @@ Template.profile.events({
     c = c + ((c * 10)/100);
     var d = $('.progress-bar').css('width', c);
     $('.progress-bar').css('width', c);
-    console.log(c);
+    var superid = $('.book').attr('id');
+    
+    $('#'+superid).addClass('hidden');
+    console.log($(this));
   }
 });

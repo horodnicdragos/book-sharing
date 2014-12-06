@@ -38,12 +38,17 @@ template(name='profile')
       .col-sm-9
         h1 Borrowed books
         each borrowedBooks
-          .book
-            img(src="#{bookImage}")
-            span #{bookAuthor}
-            span.text - #{daysLeft} days
-            .pull-right
-              button.btn.btn-warning#doneReading Done
+          .book(id='#{_id}').row
+            .col-xs-3
+              img(src="#{bookImage}")
+            .col-xs-9
+              h2 #{bookName}
+              span #{bookAuthor}
+              br
+              span !{bookrating}
+              //- span.text - #{daysLeft} days
+              .pull-right
+                button.btn.btn-warning#doneReading Done
     .hidden
       if currentUser
         h1 Settings

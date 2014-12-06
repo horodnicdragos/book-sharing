@@ -10,6 +10,7 @@ Template.home.events({
   'click .borrow': function () {
     Books.update ({'_id':this._id}, {$set: {'currentUser': Meteor.user()._id }});
     Meteor.users.update ({'_id': Meteor.user()._id}, {$addToSet: {'borrowedBooks': this._id}});
+    $('.borrow').parent().html("<i class='fa fa-check fa-3x' style='color: #009E78;'></i>");
   }
 });
 
