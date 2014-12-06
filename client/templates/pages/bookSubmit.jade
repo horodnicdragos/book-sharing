@@ -1,8 +1,8 @@
 template(name='bookSubmit')
   script.
     $( document ).ready( function(){
-      $('#searchBookBtn').on('click', function () {
-    $('.hidden').removeClass("hidden");
+      $(document).on('click','#searchBookBtn' , function () {
+    $('#google-book').removeClass("hidden");
     isbn = $('#searchBook').val();
     //- available = $('.avail').text();
     var googleAPI = "https://www.googleapis.com/books/v1/volumes?q=isbn:"+isbn ;
@@ -47,7 +47,7 @@ template(name='bookSubmit')
             input.form-control#searchBook(type='text', placeholder='Search by ISBN')
           .col-xs-3
             button.btn.btn-default#searchBookBtn Search
-        .container.hidden
+        .container#google-book.hidden
           .row.book-item
             .col-xs-3
               .cover
@@ -64,5 +64,6 @@ template(name='bookSubmit')
           
         
       .content
-        button.btn.btn-default#submitBook
-          span Add Book
+          br
+          button.btn.btn-default#submitBook.pull-left
+            span Add Book
