@@ -16,7 +16,7 @@ Template.home.helpers({
     x.forEach( function(elem) {
       a.push(elem);
     });
-
+    console.log(a);
     return a;
   }
 });
