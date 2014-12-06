@@ -35,8 +35,8 @@ template(name='profile')
         h1 Borrowed books
         each borrowedBooks
           .book
-            img(src="#{borrowedBooks}")
-            span #{borrowedBooks.bookAuthor}
+            img(src="#{bookImage}")
+            span #{bookAuthor}
             span.text - #{daysLeft} days
     if currentUser
       h1 Settings
