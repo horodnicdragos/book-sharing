@@ -1,18 +1,9 @@
-template(name='profile')
-  script.
-    $(document).ready( function(){
-    var mail = $('.mail').text();
-    var url = Gravatar.imageUrl('horodnicdragos@yahoo.com', {
-    size: 300,
-    default: 'mm'
-    });
-    $('.picture').append('<img src="'+ url +'" class="circular">');
-    });
+template(name='booksRead')
   .container
     .row
       .col-sm-3
         .profile.picture
-          //- img.circular(src='http://placekitten.com/g/200/200')
+          img.circular(src='http://placekitten.com/g/200/200')
         .profile.username
           h2 #{username.name}
         .profile.city
@@ -38,8 +29,6 @@ template(name='profile')
       h1 Settings
       hr
       .user-info
-        .mail.hidden
-          span #{username.mail}
         .panel.panel-default
           .panel-heading
             h3.panel-title Basic information

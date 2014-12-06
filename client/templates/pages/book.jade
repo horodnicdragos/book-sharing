@@ -1,7 +1,8 @@
 template(name='book')
   script.
     $( document ).ready( function(){
-    isbn = $('.hidden').text();
+    isbn = $('.isbn').text();
+    available = $('.avail').text();
     var googleAPI = "https://www.googleapis.com/books/v1/volumes?q=isbn:"+isbn ;
       $.getJSON(googleAPI, function (response) {
 
@@ -23,7 +24,9 @@ template(name='book')
               $( ".cover" ).append( "<img src="+cover+">");  
               $( ".author" ).append( author );  
               $( ".description" ).append( description );  
-              $( ".title" ).append( title );  
+              $( ".title" ).append( title );              
+              //- if (true) alert(1);
+              //- document.getElementById('available').innerText() = (available === 'true' ? 'Available' : 'Unavailable');
               for (var j = 0; j< rating; j++) {
                   $( ".rating" ).append( "<span class='full-star'>★</span>" );
                 }
@@ -40,11 +43,14 @@ template(name='book')
         .col-xs-12
           h2 
             span.title
+            .right#available 
           h4 by 
             span.author
           .rating
-          .hidden
+          .hidden.isbn
             span #{isbn}
+          hidden.avail
+            span #{available}
           .description
           br
           span ISBN: #{isbn}
