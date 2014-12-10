@@ -2,37 +2,40 @@ template(name='home')
   .container.row
     .col-xs-12
       img(src='/assets/logo.png').big-logo.center-block
+      esInput(index="players" placeholder="Search...")
+        #{esEach}(index="players")
+          player
   
-  if currentUser
-    .container
-      .max-width-940.center-block
-        .input-group.input-group-lg
-          span.input-group-addon
-            i.fa.fa-search 
-          input#searchBook.form-control(type='text', placeholder='Search by title')
-      .bookResult
-        each books 
-          .bookDetails
-            .container.row.book-item
-              .col-xs-3
-                .cover
-                  img(src='#{bookImage}')
-              .col-xs-9
-                .row
-                  .col-xs-12
-                    h2 
-                      span.title= bookName
-                    h4 by 
-                      span.author= bookAuthor
-                    .rating
-                      !{bookrating}
-                    .description= bookDesc
-                    br
-                    .isbn= bookIsbn
-                    .pull-right
-                      button.btn.btn-default.borrow Borrow
-  else
-    .row
-      .col-xs-12.text-center.logo-text
-        h1 Online book sharing prototype
+  //- if currentUser
+  //-   .container
+  //-     .max-width-940.center-block
+  //-       .input-group.input-group-lg
+  //-         span.input-group-addon
+  //-           i.fa.fa-search 
+  //-         input#searchBook.form-control(type='text', placeholder='Search by title')
+  //-     .bookResult
+  //-       each books 
+  //-         .bookDetails
+  //-           .container.row.book-item
+  //-             .col-xs-3
+  //-               .cover
+  //-                 img(src='#{bookImage}')
+  //-             .col-xs-9
+  //-               .row
+  //-                 .col-xs-12
+  //-                   h2 
+  //-                     span.title= bookName
+  //-                   h4 by 
+  //-                     span.author= bookAuthor
+  //-                   .rating
+  //-                     !{bookrating}
+  //-                   .description= bookDesc
+  //-                   br
+  //-                   .isbn= bookIsbn
+  //-                   .pull-right
+  //-                     button.btn.btn-default.borrow Borrow
+  //- else
+  //-   .row
+  //-     .col-xs-12.text-center.logo-text
+  //-       h1 Online book sharing prototype
             
